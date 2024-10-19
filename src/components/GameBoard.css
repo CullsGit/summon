@@ -1,0 +1,37 @@
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.combined-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(6, 100px);
+  gap: 5px;
+}
+
+.grid-slot {
+  width: 100px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.grid-slot:hover {
+  background-color: #e0e0e0;
+}
+
+/* Differentiate slots by player */
+.player1-slot {
+  background-color: #d3e0ff; /* Light blue for Player 1 */
+}
+
+.player2-slot {
+  background-color: #ffd3d3; /* Light red for Player 2 */
+}

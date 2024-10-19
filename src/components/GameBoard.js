@@ -1,30 +1,31 @@
 import React from "react";
+import "./GameBoard.css";
 
 const GameBoard = () => {
-  const renderGrid = (player) => {
+  // Create a 6x3 grid for the combined board
+  const renderCombinedGrid = () => {
     return (
-      <div>
-        {Array(9)
+      <div className="combined-grid">
+        {Array(18)
           .fill(null)
-          .map((_, index) => {
-            <div key={index} className="grid-slot">
-              {/* Add card elements */}
-            </div>;
-          })}
+          .map((_, index) => (
+            <div
+              key={index}
+              className={`grid-slot ${
+                index < 9 ? "player1-slot" : "player2-slot"
+              }`}
+            >
+              {/* Add card elements here later */}
+            </div>
+          ))}
       </div>
     );
   };
 
   return (
     <div className="game-board">
-      <div className="player-board">
-        <h2>Player 1</h2>
-        {renderGrid("player1")}
-      </div>
-      <div className="player-board">
-        <h2>Player 2</h2>
-        {renderGrid("player2")}
-      </div>
+      <h1>Battle Arena</h1>
+      {renderCombinedGrid()}
     </div>
   );
 };
